@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = 'stylesheet' type = 'text/css' href = 'make_and_bake.css'/>
+        <script src = 'make_and_bake.js' type = 'module'></script>
+    </head>
+    <body>
+        <h1>Santa's comin...betta hide yo cookies!!</h1>
+        <table class = 'page-table'>
+            <td>
+                <div class = 'senders-form gift-form'>
+                    <h3 class = 'form-header'>
+                        Please enter names of gift senders here </br>
+                        either one at a time, or as a list separated</br> by commas:
+                    </h3>
+                    <input type = 'text' id = 'sender-input'/>
+                    <button id = 'sender-submit'>Submit</button>
+                    <button id = 'sender-clear'>Clear</button>
+                    <div></div>
+                </div>
+                <div id = 'senders-list-append-point'>
+                    <ul class = 'gift-list'></ul>
+                </div>
+            </td>
+            <td>
+                <div class = 'recievers-form gift-form'>
+                    <h3 class = 'form-header'>
+                        Please enter names of gift recievers here </br>
+                        either one at a time, or as a list separated</br> by commas:
+                    </h3>
+                    <input type = 'text' id = 'reciever-input'/>
+                    <button id = 'reciever-submit'>Submit</button>
+                    <button id = 'reciever-clear'>Clear</button>
+                </div>
+                <div id = 'recievers-list-append-point'>
+                    <ul class = 'gift-list'></ul>
+                </div>
+            </td>
+        </table>
+        <div class = 'submission-section'>
+            <button id = 'match-submit'>Match us up!!</button>
+            <button id = 'match-clear'>Clear matches</button>
+            <div id = 'match-list-container'>
+                <table class = 'hidden'>
+                    <td id = 'senders-match-list'>
+                        <h3>Senders</h3>
+                        <ol></ol>
+                    </td>
+                    <td id = 'recievers-match-list'>
+                        <h3>Recievers</h3>
+                        <ol></ol>
+                    </td>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

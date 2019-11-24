@@ -1,0 +1,23 @@
+.gift-form {
+    display: inline-block;
+    margin: 20px;
+}
+.page-table td {
+    border: black 2px solid;
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    width: 100%;
+}
+
+.submission-section{
+    margin-top: 20px;
+}
+
+#match-submit{
+    margin-bottom: 20px;
+}
