@@ -55,6 +55,13 @@ function validateForSubmission(elemId ,text){
     } else if (src == 'reciever' && progData.recieversList.includes(text)){
         throw ('You can\'t submit duplicate names.')
     }
+
+    text = text.split(',')
+    text = text.filter(elem => elem != '')
+
+    if ((new Set(text)).size !== text.length){
+        throw ('You can\'t submit duplicate names.')
+    }
 }
 
 function submitButtonClicked(e){
