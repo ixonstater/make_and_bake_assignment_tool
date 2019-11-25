@@ -13,6 +13,7 @@ var progData = {
 //form functions
 function manageInput(text, src){
     let inputList = text.split(',')
+    inputList = inputList.filter(elem => elem != '')
     if (src == 'sender'){
         progData.sendersList = progData.sendersList.concat(inputList)
     }
@@ -221,12 +222,31 @@ function matchClearButtonClicked(e){
     hideMatches()
 }
 
+//print functions
+
+function addNamesToDoc(doc){
+    let senderOffsetX = 75
+    let recieverOffsetX = 175
+    let offsetY = 10
+    let startY = 20
+    let negativeY = 0
+
+    for (let i = 0; i < progData.matches.senders.length; i++){
+        let nextY = offsetY * (i + 1) + startY - negativeY
+        if (doc.internal.pageSize.height < nextY + 10){
+            doc.addPage()
+            negativeY = nextY - 10
+            nextY = offsetY * (i + 1) + startY - negativeY
+        }
+        doc.text(senderOffsetX + 10, nextY, `${i + 1}) ${progData.matches.senders[i]}`)
+        doc.text(recieverOffsetX + 10, nextY, `${i + 1}) ${progData.matches.recievers[i]}`)
+    }
+}
+
 function printButtonClicked(e){
     let doc = new jsPDF('landscape')
-    let source = document.getElementById('match-list-container')
     let senderOffsetX = 65
     let recieverOffsetX = 165
-    let offsetY = 20
     doc.setTextColor(0,100,0);
     doc.setFontSize(30)
     doc.text(senderOffsetX, 20, 'Gift Senders')
@@ -234,13 +254,8 @@ function printButtonClicked(e){
 
     doc.setFontSize(15)
     doc.setTextColor(200, 0, 0)
-    for (let i = 0; i < progData.matches.senders.length; i++){
-        doc.text(senderOffsetX + 10, offsetY * (i + 2), `${i}) ${progData.matches.senders[i]}`)
-    }
+    addNamesToDoc(doc)
 
-    for (let i = 0; i < progData.matches.recievers.length; i++){
-        doc.text(recieverOffsetX + 10, offsetY * (i + 2), `${i}) ${progData.matches.recievers[i]}`)
-    }
     doc.output('dataurlnewwindow')
 }
 
@@ -255,3 +270,5 @@ function init(){
 }
 
 document.addEventListener('DOMContentLoaded', init)
+
+//a,b,c,d,e,f,g,h,i,j,k
