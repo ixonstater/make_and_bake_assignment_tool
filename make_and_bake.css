@@ -14,10 +14,14 @@ table {
     width: 100%;
 }
 
-.submission-section{
+.submission-section {
     margin-top: 20px;
 }
 
-#match-submit{
+#match-submit {
+    margin-bottom: 20px;
+}
+
+#print {
     margin-bottom: 20px;
 }
