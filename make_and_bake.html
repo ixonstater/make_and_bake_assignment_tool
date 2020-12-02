@@ -3,7 +3,7 @@
 <html>
     <head>
         <link rel = 'stylesheet' type = 'text/css' href = 'make_and_bake.css'/>
-        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.1.1/jspdf.umd.min.js" integrity="sha512-/Am09zlYshHgRizY3RkConGj4BsYIdb8mS7r5XAXw0rTiLgGSHzpUHTQBhinWR32C/KzLr749J1xuORzT2JnRA==" crossorigin="anonymous"></script>
         <script src = 'make_and_bake.js' type = 'module'></script>
     </head>
     <body>
@@ -16,7 +16,7 @@
                         Please enter names of gift senders here </br>
                         either one at a time, or as a list separated</br> by commas:
                     </h3>
-                    <input type = 'text' id = 'sender-input'/>
+                    <textarea type = 'text' id = 'sender-input'></textarea>
                     <button id = 'sender-submit'>Submit</button>
                     <button id = 'sender-clear'>Clear</button>
                     <div></div>
@@ -31,7 +31,7 @@
                         Please enter names of gift recievers here </br>
                         either one at a time, or as a list separated</br> by commas:
                     </h3>
-                    <input type = 'text' id = 'reciever-input'/>
+                    <textarea type = 'text' id = 'reciever-input'></textarea>
                     <button id = 'reciever-submit'>Submit</button>
                     <button id = 'reciever-clear'>Clear</button>
                 </div>

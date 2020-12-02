@@ -251,7 +251,7 @@ function addNamesToDoc(doc){
 }
 
 function printButtonClicked(e){
-    let doc = new jsPDF('landscape')
+    let doc = jspdf.jsPDF('landscape')
     let senderOffsetX = 65
     let recieverOffsetX = 165
     doc.setTextColor(0,100,0);
